@@ -1,0 +1,228 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin:0;
+    border:none;
+    background:#f5f6f7;
+    /* background-color: aliceblue; */
+    height:100vh;
+}
+
+/* Handling nav bar --------------------------------------------------- */
+#navbar {
+    position: fixed;
+    border-right:  1px solid;
+    width: 300px;
+    height: 100%;
+    top:0;
+    left:0;
+    background: #fff;
+}
+
+#nav-title {
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-bottom: 1rem;
+}
+
+.nav-ul{
+    margin: 0;
+    padding: 0;
+}
+.nav-ul li{
+    list-style-type: none;
+
+    margin:0;
+    padding:0
+}
+
+
+.nav-link {
+    /* border-bottom: 1px solid; */
+    color:black;
+    font-size: 1.35rem;
+    text-decoration:none;
+    margin:0;
+    display: block;
+    padding: 20px 10px;
+    text-align: left;
+
+    transition:0.5s;
+
+}
+
+.nav-link:hover{
+    letter-spacing: 4px;
+    /* border-bottom: 1px solid; */
+    /* color:rgb(255, 161, 150);  */
+    background-color: #f5f6f7;
+    border-bottom-width: 2px;
+}
+
+
+
+/* -------------------------------------------------------- */
+
+/* Handling main */
+
+#main-doc {
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+    padding-top:40px;
+    margin-bottom: 120px;
+}
+
+article {
+    position: relative;
+    left: 30px
+
+}
+
+
+section {
+    /* margin: 20px 40px 40px; */
+    margin: 20px 0 40px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************************************************************************/
+
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by Github syntax coloring
+ */
+
+ code[class*="language-"],
+ pre[class*="language-"] {
+     color: #393A34;
+     font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+     direction: ltr;
+     text-align: left;
+     white-space: pre;
+     word-spacing: normal;
+     word-break: normal;
+     font-size: .9em;
+     line-height: 1.2em;
+ 
+     -moz-tab-size: 4;
+     -o-tab-size: 4;
+     tab-size: 4;
+ 
+     -webkit-hyphens: none;
+     -moz-hyphens: none;
+     -ms-hyphens: none;
+     hyphens: none;
+ }
+ 
+ pre > code[class*="language-"] {
+     font-size: 1em;
+ }
+ 
+ pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+ code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+     background: #b3d4fc;
+ }
+ 
+ pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+ code[class*="language-"]::selection, code[class*="language-"] ::selection {
+     background: #b3d4fc;
+ }
+ 
+ /* Code blocks */
+ pre[class*="language-"] {
+     padding: 1em;
+     margin: .5em 0;
+     overflow: auto;
+     border: 1px solid #dddddd;
+     background-color: white;
+     border-left-color: black;
+     border-left-width: 2px;
+ }
+ 
+ /* Inline code */
+ :not(pre) > code[class*="language-"] {
+     padding: .2em;
+     padding-top: 1px;
+     padding-bottom: 1px;
+     background: #f8f8f8;
+     /* border: 1px solid #dddddd; */
+ }
+ 
+ .token.comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+     color: #999988;
+     font-style: italic;
+ }
+ 
+ .token.namespace {
+     opacity: .7;
+ }
+ 
+ .token.string,
+ .token.attr-value {
+     color: #e3116c;
+ }
+ 
+ .token.punctuation,
+ .token.operator {
+     color: #393A34; /* no highlight */
+ }
+ 
+ .token.entity,
+ .token.url,
+ .token.symbol,
+ .token.number,
+ .token.boolean,
+ .token.variable,
+ .token.constant,
+ .token.property,
+ .token.regex,
+ .token.inserted {
+     color: #36acaa;
+ }
+ 
+ .token.atrule,
+ .token.keyword,
+ .token.attr-name,
+ .language-autohotkey .token.selector {
+     color: #00a4db;
+ }
+ 
+ .token.function,
+ .token.deleted,
+ .language-autohotkey .token.tag {
+     color: #b600e4;
+ }
+ 
+ .token.tag,
+ .token.selector,
+ .language-autohotkey .token.keyword {
+     color: #00009f;
+ }
+ 
+ .token.important,
+ .token.function,
+ .token.bold {
+     font-weight: bold;
+ }
+ 
+ .token.italic {
+     font-style: italic;
+ }

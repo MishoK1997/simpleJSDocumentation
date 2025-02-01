@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Documentation, JS, JavaScript" >
+    <meta name="description" content="Javascript's simple technical documentation page">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+    <title>JS Documentation</title>
+    <link rel="stylesheet" href="./styles.css">
+    </head>
+     <body>
+       <header id="nav-header">
+         <nav id="navbar">
+           <header>
+             <h1 id="nav-title">Simple JS Documentation</h1>
+            </header>
+           <ul class="nav-ul">
+              <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+              <li><a class="nav-link" href="#Arrays">Arrays</a></li>
+              <li><a class="nav-link" href="#Strings">Strings</a></li>
+              <!-- <li><a class="nav-link" href="#Methods">Methods</a></li> -->
+              <li><a class="nav-link" href="#DOM">DOM</a></li>
+            </ul>
+          </nav>
+        </header>
+
+       <main id="main-doc">
+         <section id="Introduction" class="main-section">
+            <header>
+              <h2>Introduction</h2>
+            </header>
+             <article>
+               <p>To introduce JavaScript, I want to tell you that you don't need to read a lot about it. You just need to glance at some simplified examples and practice them with your hands and keyboard.</p>
+               <p>For more information scroll below.</p>
+             </article>
+         </section>
+         <section id="Arrays" class="main-section">
+            <header>
+              <h2>Arrays</h2>
+              <p>Array is a linear data structure, where you are able to store your preffered data. I'm gonna show you the most popular array's methods these you will use in your JS journey.</p>
+            </header>
+            <article>
+              <header>
+                <h4>slice()</h4>
+              </header>
+              <p>It returns selected elements in an array, especially as a new array and doesn't change the original array.</p>
+              
+              <pre><code class="language-javascript">  
+              const items = ["key", "toy", "notebook", "car"];
+              items.slice(-3, -1) // output -> ["toy", "notebook"]
+            </code></pre>
+              <header>
+                <h4>Array()</h4>
+              </header>
+              <p>This is a constructor that is used to create Array object, you can call it with or without a new keyword.</p>
+              <ul>
+                <li><code class="language-javascript">new Array(1,2,3)</code></li>
+                <li><code class="language-javascript">Array(10)</code></li>
+              </ul>
+              <p>If we take the last one length should be 10.</p>
+              <header>
+                <h4>fill()</h4>
+              </header>
+              <p>This method fills specified elements in an array with value and <em>overwrites</em> the original array.</p>
+                <pre>
+                  <code class="language-javascript">
+              const range = (start, end) => Array(end - start + 1)
+              .fill(start).map((el, ind)=> el+index);</code>
+              </pre>
+            </article>
+         </section>
+         <section id="Strings" class="main-section">
+           <header> 
+             <h2>Strings</h2>
+             <p>In a simple term it's a sequence of characters, typically used to represent text.</p>
+             </header>
+            <article>
+             <header>
+              <h4>parseFloat()</h4>
+             </header>
+             <p>This <code><strong>Number.parseFloat()</strong></code> method parses a value as a string and returns the first number. </p>
+             <ul>
+              <li>If the first character cann't be converted, NaN is returned</li>
+              <li>Only the first number found is returned</li>
+             </ul>
+             <pre> 
+             <code class="language-javascript">const myStr = "20 40 string";
+             Number.parseFloat(myStr) // output is 20</code>
+             </pre>
+             <header>
+              <h4>charAt()</h4>
+             </header>
+             <p>This returns the character at a specified index (position) in a string.</p>
+             <pre>
+             <code class="language-javascript">
+              const myStr = "This is a string";
+              myStr.charAt(2) // output is "i"</code>
+             </pre>
+             <header>
+              <h4>split()</h4>
+             </header>
+             <p>It splits a string into an array of substrings, doesn't change the original string and returns new array.</p>
+             <ul>
+              <li>if (" ") is used as separator the string is split between words.</li>
+              <li>The syntax is the following: <code>myStr.split(separator, limit)</code></li>
+              <ul>
+                <li>limit is an integer that limits the number of splits. Items after the limit are excluded.</li>
+              </ul>
+             </ul>
+             <pre><code class="language-javascript">
+              let fruits = "apple,banana,grape,orange";
+
+              let fruitArray = fruits.split(","); 
+
+              // output is ["apple", "banana", "grape", "orange"]
+             </code></pre>
+          </article>
+         </section>
+         <section id="DOM" class="main-section">
+           <header>
+             <h2>DOM</h2>
+             <p></p>
+             </header>
+             <article>
+
+             </article>
+         </section>
+         </main>
+       </body>
+       <script src="./script.js"></script>
+  </html>
