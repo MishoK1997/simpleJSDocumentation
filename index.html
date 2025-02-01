@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Documentation, JS, JavaScript" >
     <meta name="description" content="Javascript's simple technical documentation page">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <title>JS Documentation</title>
     <link rel="stylesheet" href="./styles.css">
-    </head>
+  </head>
      <body>
        <header id="nav-header">
          <nav id="navbar">
@@ -23,6 +22,7 @@
               <li><a class="nav-link" href="#Strings">Strings</a></li>
               <!-- <li><a class="nav-link" href="#Methods">Methods</a></li> -->
               <li><a class="nav-link" href="#DOM">DOM</a></li>
+              <li><a class="nav-link" href="#Exercises">Exercises</a></li>
             </ul>
           </nav>
         </header>
@@ -47,11 +47,11 @@
                 <h4>slice()</h4>
               </header>
               <p>It returns selected elements in an array, especially as a new array and doesn't change the original array.</p>
-              
               <pre><code class="language-javascript">  
               const items = ["key", "toy", "notebook", "car"];
+
               items.slice(-3, -1) // output -> ["toy", "notebook"]
-            </code></pre>
+              </code></pre>
               <header>
                 <h4>Array()</h4>
               </header>
@@ -70,13 +70,38 @@
               const range = (start, end) => Array(end - start + 1)
               .fill(start).map((el, ind)=> el+index);</code>
               </pre>
+              <header>
+                <h4>reduce() & reduceRight()</h4>
+              </header>
+              <p>It returns a single value, especially the function's accumulated result. Also it doesn't change the origianl array and doesn't execute the func for empyy array elements.</p>
+              <p>Let's examine unfamiliar things in this syntax: <code><strong>array.reduce(function(total, currentValue, currentIndex, arr), initialValue)</strong></code><br> </p>
+              <ul>
+                <li>initialValue -- a value to be passed to the function as the inital value.<br>
+                Such as: 0, "", [], {} </li>
+                <li>total -- the initialValue or the previusly returned value of the function.</li>
+              </ul>
+              <pre><code class="language-javascript">
+                const reducedVal = [2,3,4,5,6].reduce((total, currVal)=> total+currVal, 0);
+
+                // reducedVal should be 20 
+              </code></pre>
+              <p><storng>reduceRight()</storng> is same as reduce() but works from right to left.</p>
+              <header>
+                <h4>some()</h4>
+              </header>
+              <p>It returns boolean value true / false if a callback function's conditions meet, and a specified array contains it. Also it doesn't change the origianl array.</p>
+              <pre><code class="language-javascript">
+                ["a", "b", "c", "A", "d"].some(letter => letter == letter.toUpperCase());
+
+                // returns true cause of "A"
+              </code></pre>
             </article>
          </section>
          <section id="Strings" class="main-section">
            <header> 
              <h2>Strings</h2>
              <p>In a simple term it's a sequence of characters, typically used to represent text.</p>
-             </header>
+            </header>
             <article>
              <header>
               <h4>parseFloat()</h4>
@@ -88,15 +113,17 @@
              </ul>
              <pre> 
              <code class="language-javascript">const myStr = "20 40 string";
+
              Number.parseFloat(myStr) // output is 20</code>
              </pre>
-             <header>
+              <header>
               <h4>charAt()</h4>
-             </header>
+              </header>
              <p>This returns the character at a specified index (position) in a string.</p>
              <pre>
              <code class="language-javascript">
               const myStr = "This is a string";
+
               myStr.charAt(2) // output is "i"</code>
              </pre>
              <header>
@@ -117,18 +144,164 @@
 
               // output is ["apple", "banana", "grape", "orange"]
              </code></pre>
-          </article>
+             <header>
+              <h4>indexOf()</h4>
+             </header>
+             <p>It returns the position of the first occurrance of a value in string, otherwise returns -1, if the value isn't found. Keep in mind that this method is case sensitive.
+              Syntax is the following: <strong><code>text.indexOf("e",5)</code></strong> default is 0 but you can define the postion to start from.</p>
+              <pre><code class="language-javascript">
+                "Say Hello to JS".indexOf("JS",2);
+
+                // It'll start from this specified position and returns 13
+              </code></pre>
+              <header>
+                <h4>includes()</h4>
+              </header>
+              <p>It returns true if a string contains a specified string. Otherwise it returns false.</p>
+              <pre><code class="language-javascript">
+                text.includes("world", 12);
+                
+                // Returns true if this text contains "world"
+              </code></pre>
+            </article>
          </section>
          <section id="DOM" class="main-section">
            <header>
              <h2>DOM</h2>
-             <p></p>
+             <p>Document Object Model (DOM) is an interface that allows programs and scripts to dynamically access and update the content.
+              It helps us to make our webpage interactive. 
+             </p>
              </header>
              <article>
+                <header>
+                  <h4>getElementById()</h4>
+                </header>
+                <p>With that we are able to access an HTML element with a given ID name.</p>
+                <pre><code class="language-javascript">
+                  document.getElementById("#info");
+                </code></pre>
+                <header>
+                  <h4>querySelector() & querySelectorAll()</h4>
+                </header>
+                <p>It returns the first element that matches a CSS selector to return all matches, use querySelectorAll() instead.
+                  Especially, querySelectorAll method returns a <em>NodeList</em> of all the elements that match the selector.
+                  A NodeList is an array-like object, so you can access the elements using bracket notation.
+                </p>
+                <pre><code class="language-javascript">
+                  document.querySelelctorAll(".input-container");
+                </code></pre>
+                <header>
+                  <h4>getElementsByClassName()</h4>
+                </header>
+                <p>To get all the elements with this class use that.
+                  It returns an HTMLCollection, which is an array like object of all the elements
+                  that have a matching class name.
+                </p>
+                <pre><code class="language-javascript">
+                  document.getElementByClassName("values-dropdown");
+                </code></pre>
+                <header>
+                  <h4>createElement()</h4>
+                </header>
+                  <p>This method creates an element node.</p>
+                  <pre><code class="language-javascript">
+                    const btn = document.createElement("button");
+                  </code></pre>
+                <header>
+                  <h4>appendChild()</h4>
+                </header>
+                <p>Appends a node element as the last child of an element.</p>
+                <pre><code class="language-javascript">
+                  const btn = document.createElement("copy");
 
+                  btn.innerHTML = "Copy";
+
+                  document.body.appendChild(btn);
+                </code></pre>
              </article>
          </section>
-         </main>
-       </body>
+         <section id="Exercises" class="main-section">
+          <header>
+            <h2>Exercises</h2>
+            <p>To practice in JS let's try these exercises in your own.</p>
+          </header>
+          <article>
+            <header>
+              <h4>Deep Clone and Object "Without JSON"</h4>
+            </header>
+            <p>Write a function deepClone(obj) that creates a deep copy of a given object,
+              handling nested structures, arrays, and objects without using JSON.stringify()</p>
+            <h5>Rrequirements: </h5>
+            <ul>
+              <li>Should work for nested objects and arrays</li>
+              <li>Should preserve functions and special objects like Date</li>
+            </ul>
+            <h5>Example</h5>
+            <pre><code class="language-javascript">
+            const obj = { 
+                name: "John", 
+                details: { age: 30, hobbies: ["coding", "reading"] }, 
+                date: new Date()
+            };
+
+            const clonedObj = deepClone(obj);
+            console.log(clonedObj.details === obj.details); // false (should not be the same reference)            
+            </code></pre>
+          <!-- TesT -->
+          <header>
+            <h4>Implement a Custom Promise.all()</h4>
+          </header>
+          <p>Write a function <code>promiseAll(promises)</code> that mimics <code>Promise.all()</code>, resolving all promises in an array and returning their results. If one promise rejects, it should return the rejected value immediately.</p>
+          <h5>Example</h5>
+          <pre><code class="language-javascript">
+          const p1 = Promise.resolve(10);
+          const p2 = Promise.resolve(20);
+          const p3 = Promise.reject("Error occurred");
+          
+          promiseAll([p1, p2]).then(console.log); // [10, 20]
+          promiseAll([p1, p3]).catch(console.error); // "Error occurred"
+          </code></pre>
+          
+          <header>
+            <h4>LRU Cache Implementation</h4>
+          </header>
+          <p>Implement an <strong>LRU (Least Recently Used) Cache</strong> using a class. The cache should store key-value pairs and remove the least recently used entry when it exceeds the capacity.</p>
+          <h5>Example</h5>
+          <pre><code class="language-javascript">
+          const cache = new LRUCache(3);
+          cache.put(1, "A");
+          cache.put(2, "B");
+          cache.put(3, "C");
+          cache.get(1); // Moves 1 to most recently used
+          cache.put(4, "D"); // Removes 2 (Least Recently Used)
+          console.log(cache.get(2)); // null (2 was removed)
+          </code></pre>
+          
+          <header>
+            <h4>Infinite Currying Function</h4>
+          </header>
+          <p>Create a function <code>add()</code> that supports infinite currying, meaning it can be called repeatedly and returns a function, until it's called without arguments.</p>
+          <h5>Example</h5>
+          <pre><code class="language-javascript">
+          console.log(add(2)(3)(5)()); // 10
+          console.log(add(1)(2)(3)(4)(5)()); // 15
+          </code></pre>
+          
+          <header>
+            <h4>Implement a Debounce Function</h4>
+          </header>
+          <p>Create a <code>debounce(func, delay)</code> function that ensures a given function executes only <strong>after a specified delay</strong> from the last call.</p>
+          <h5>Example</h5>
+          <pre><code class="language-javascript">
+          const debouncedFunc = debounce(() => console.log("Function Executed!"), 2000);
+          debouncedFunc();
+          debouncedFunc();
+          debouncedFunc(); // Only this call will execute after 2s
+          </code></pre>
+          <!-- testing -->
+          </article>
+         </section>
+        </main>
+    </body>
        <script src="./script.js"></script>
-  </html>
+</html>
